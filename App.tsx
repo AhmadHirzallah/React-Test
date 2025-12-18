@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Mail, Lock, Eye, EyeOff, ShieldCheck, ArrowRight, Loader2 } from 'lucide-react';
 import Input from './components/Input';
 import SocialLogin from './components/SocialLogin';
-import { geminiService } from './services/geminiService';
+//import { geminiService } from './services/geminiService';
 import { SecurityTip, UserSession } from './types';
 
 const App: React.FC = () => {
@@ -15,15 +15,15 @@ const App: React.FC = () => {
   const [session, setSession] = useState<UserSession | null>(null);
   const [tip, setTip] = useState<SecurityTip | null>(null);
 
-  // Fetch AI Security Tip on mount
-  useEffect(() => {
-    const fetchTip = async () => {
-      const result = await geminiService.getSecurityTip();
-      setTip(result);
-    };
-    fetchTip();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+//  // Fetch AI Security Tip on mount
+//  useEffect(() => {
+//    const fetchTip = async () => {
+//      const result = await geminiService.getSecurityTip();
+//      setTip(result);
+//    };
+//    fetchTip();
+//    // eslint-disable-next-line react-hooks/exhaustive-deps
+//  }, []);
 
   const handleLogin = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
